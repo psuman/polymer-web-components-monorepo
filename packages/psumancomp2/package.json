@@ -1,6 +1,6 @@
 {
   "name": "psumancomp2",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "lib/mycomp2.js",
   "typings": "lib/mycomp2.d.ts",
   "flat": true,
