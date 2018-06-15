@@ -1,6 +1,6 @@
 {
   "name": "psumancomp3",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "lib/mycomp3.js",
   "typings": "lib/mycomp3.d.ts",
   "flat": true,
@@ -42,7 +42,7 @@
   "dependencies": {
     "@polymer/polymer": "^3.0.0-pre.13",
     "@webcomponents/webcomponentsjs": "^2.0.1",
-    "psumancomp1": "^0.1.0",
+    "psumancomp1": "^0.2.0",
     "psumancomp2": "^0.1.0"
   }
 }
