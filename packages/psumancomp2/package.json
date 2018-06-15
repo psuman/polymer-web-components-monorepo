@@ -1,0 +1,46 @@
+{
+  "name": "psumancomp2",
+  "version": "1.0.0",
+  "main": "lib/mycomp2.js",
+  "typings": "lib/mycomp2.d.ts",
+  "flat": true,
+  "license": "MIT",
+  "scripts": {
+    "prepare": "tsc -p tsconfig.build.json",
+    "clean": "rimraf lib/* && rimraf node_modules"
+  },
+  "resolutions": {
+    "execa": "0.8.0",
+    "find-up": "2.1.0",
+    "load-json-file": "4.0.0",
+    "path-exists": "3.0.0",
+    "read-pkg": "3.0.0",
+    "yargs": "8.0.2",
+    "minimist": "1.2.0",
+    "strip-ansi": "4.0.0",
+    "ansi-regex": "3.0.0",
+    "meow": "4.0.1",
+    "read-pkg-up": "3.0.0",
+    "source-map": "0.4.4",
+    "wordwrap": "0.0.3",
+    "camelcase": "4.1.0",
+    "cliui": "3.2.0",
+    "camelcase-keys": "4.2.0",
+    "map-obj": "2.0.0",
+    "redent": "2.0.0",
+    "trim-newlines": "2.0.0",
+    "indent-string": "3.2.0",
+    "strip-indent": "2.0.0",
+    "pify": "3.0.0",
+    "path-type": "3.0.0",
+    "parse-json": "4.0.0",
+    "strip-bom": "3.0.0",
+    "uuid": "3.2.1",
+    "string-width": "2.1.1",
+    "is-fullwidth-code-point": "2.0.0"
+  },
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0-pre.13",
+    "@webcomponents/webcomponentsjs": "^2.0.1"
+  }
+}
