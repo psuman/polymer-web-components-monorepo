@@ -1,13 +1,12 @@
 {
   "name": "psumancomp3",
-  "version": "0.2.0",
-  "main": "lib/mycomp3.js",
-  "typings": "lib/mycomp3.d.ts",
+  "version": "0.1.0",
+  "main": "dist/psumancomp3.js",
   "flat": true,
   "license": "MIT",
   "scripts": {
-    "prepare": "tsc -p tsconfig.build.json",
-    "clean": "rimraf lib/* && rimraf node_modules"
+    "prepare": "webpack --config webpack.dev.conf.js",
+    "clean": "rimraf dist/* && rimraf node_modules"
   },
   "resolutions": {
     "execa": "0.8.0",
@@ -38,16 +37,11 @@
     "uuid": "3.2.1",
     "string-width": "2.1.1",
     "is-fullwidth-code-point": "2.0.0",
-    "inquirer": "3.3.0",
     "kind-of": "3.2.2",
     "inherits": "2.0.3",
-    "cross-spawn": "5.1.0",
     "yallist": "2.1.2",
     "is-glob": "3.1.0",
-    "external-editor": "2.2.0",
-    "chardet": "0.4.2",
     "y18n": "3.2.1",
-    "yargs-parser": "7.0.0",
     "debug": "3.1.0",
     "punycode": "2.1.1",
     "define-property": "2.0.2",
@@ -61,12 +55,31 @@
     "has-value": "1.0.0",
     "set-value": "2.0.0",
     "has-values": "1.0.0",
-    "util": "0.10.4"
+    "util": "0.10.4",
+    "inquirer": "3.3.0",
+    "cross-spawn": "5.1.0",
+    "external-editor": "2.2.0",
+    "chardet": "0.4.2",
+    "yargs-parser": "7.0.0",
+    "commander": "2.13.0",
+    "uglify-js": "2.8.29",
+    "@polymer/polymer": "3.0.0-pre.13",
+    "globby": "6.1.0",
+    "psumancomp1": "0.2.0"
   },
   "dependencies": {
-    "@polymer/polymer": "^3.0.0-pre.13",
+    "@polymer/polymer": "next",
     "@webcomponents/webcomponentsjs": "^2.0.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.1",
+    "html-loader": "^0.5.5",
     "psumancomp1": "^0.2.0",
-    "psumancomp2": "^0.1.0"
+    "psumancomp2": "^0.1.0",
+    "ts-loader": "^4.4.1",
+    "typescript": "^2.9.2",
+    "webpack": "^4.12.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.0.7"
   }
 }

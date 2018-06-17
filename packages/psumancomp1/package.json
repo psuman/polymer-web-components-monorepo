@@ -1,13 +1,12 @@
 {
   "name": "psumancomp1",
   "version": "0.2.0",
-  "main": "lib/mycomp1.js",
-  "typings": "lib/mycomp1.d.ts",
+  "main": "dist/psumancomp1.js",
   "flat": true,
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config webpack.dev.conf.js",
-    "clean": "rimraf lib/* && rimraf node_modules"
+    "prepare": "webpack --config webpack.dev.conf.js",
+    "clean": "rimraf dist/* && rimraf node_modules"
   },
   "resolutions": {
     "execa": "0.8.0",
@@ -64,11 +63,14 @@
     "yargs-parser": "7.0.0",
     "commander": "2.13.0",
     "uglify-js": "2.8.29",
-    "@polymer/polymer": "3.0.0-pre.13"
+    "@polymer/polymer": "3.0.0-pre.13",
+    "globby": "6.1.0"
   },
   "dependencies": {
     "@polymer/polymer": "next",
     "@webcomponents/webcomponentsjs": "^2.0.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.1",
     "html-loader": "^0.5.5",
     "ts-loader": "^4.4.1",
     "typescript": "^2.9.2",

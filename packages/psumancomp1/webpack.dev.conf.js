@@ -1,4 +1,6 @@
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -13,7 +15,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'lib')
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
@@ -36,4 +38,18 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js']
   },
+  plugins: [
+    new CleanWebpackPlugin(['dist'], { verbose: true, root: path.resolve(__dirname) }),
+    new CopyWebpackPlugin([
+      {
+        from: path.join(
+          path.resolve(__dirname, '../../node_modules/@webcomponents/webcomponentsjs/'),
+          '*.js'
+        ),
+        to: './webcomponentsjs',
+        flatten: true
+      }
+    ]),
+    new CopyWebpackPlugin(['index.html'])
+  ]
 };
