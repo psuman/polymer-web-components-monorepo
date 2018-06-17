@@ -308,7 +308,7 @@ eval("module.exports = \"<h1>Hello world.</h1>\\n\";\n\n//# sourceURL=webpack://
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst polymer_element_js_1 = __webpack_require__(/*! @polymer/polymer/polymer-element.js */ \"../../node_modules/@polymer/polymer/polymer-element.js\");\nconst view = __webpack_require__(/*! ./app.template.html */ \"./src/app.template.html\");\nclass MyApp1 extends polymer_element_js_1.PolymerElement {\n    constructor() {\n        super();\n    }\n    static get template() {\n        return view;\n    }\n}\nexports.MyApp1 = MyApp1;\ncustomElements.define('my-app1', MyApp1);\n\n\n//# sourceURL=webpack:///./src/myapp1.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst polymer_element_1 = __webpack_require__(/*! @polymer/polymer/polymer-element */ \"../../node_modules/@polymer/polymer/polymer-element.js\");\nconst view = __webpack_require__(/*! ./app.template.html */ \"./src/app.template.html\");\nclass MyApp1 extends polymer_element_1.PolymerElement {\n    constructor() {\n        super();\n    }\n    static get template() {\n        return view;\n    }\n}\nexports.MyApp1 = MyApp1;\ncustomElements.define('my-app1', MyApp1);\n\n\n//# sourceURL=webpack:///./src/myapp1.ts?");
 
 /***/ }),
 
