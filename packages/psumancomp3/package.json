@@ -1,6 +1,6 @@
 {
   "name": "psumancomp3",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "main": "dist/psumancomp3.js",
   "flat": true,
   "license": "MIT",
@@ -73,8 +73,8 @@
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.1",
     "html-loader": "^0.5.5",
-    "psumancomp1": "^0.2.0",
-    "psumancomp2": "^0.1.0",
+    "psumancomp1": "^0.2.1",
+    "psumancomp2": "^0.2.1",
     "ts-loader": "^4.4.1",
     "typescript": "^2.9.2",
     "webpack": "^4.12.0"
