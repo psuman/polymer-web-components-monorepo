@@ -1,20 +1,12 @@
 {
-  "name": "polymer-web-components-monorepo",
-  "version": "1.0.0",
-  "private": true,
+  "name": "uberbundle",
+  "version": "0.2.2",
+  "main": "dist/uberbundle.js",
   "flat": true,
-  "scripts": {
-    "clean": "rimraf dist/*"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "main": "index.js",
-  "repository": "https://github.com/psuman/polymer-web-components-monorepo",
-  "author": "suman <psuman@prokarma.com>",
   "license": "MIT",
-  "devDependencies": {
-    "lerna": "^2.11.0"
+  "scripts": {
+    "prepare": "yarn clean && node generate-imports.js && webpack --config webpack.dev.conf.js",
+    "clean": "rimraf dist/* && rimraf node_modules"
   },
   "resolutions": {
     "execa": "0.8.0",
@@ -45,19 +37,13 @@
     "uuid": "3.2.1",
     "string-width": "2.1.1",
     "is-fullwidth-code-point": "2.0.0",
-    "globby": "6.1.0",
-    "inquirer": "3.3.0",
-    "uglify-js": "2.8.29",
     "kind-of": "3.2.2",
     "inherits": "2.0.3",
-    "cross-spawn": "5.1.0",
     "yallist": "2.1.2",
     "is-glob": "3.1.0",
-    "external-editor": "2.2.0",
-    "chardet": "0.4.2",
     "y18n": "3.2.1",
-    "yargs-parser": "7.0.0",
-    "commander": "2.13.0",
+    "debug": "3.1.0",
+    "punycode": "2.1.1",
     "define-property": "2.0.2",
     "extend-shallow": "3.0.2",
     "isobject": "3.0.1",
@@ -66,11 +52,32 @@
     "is-descriptor": "1.0.2",
     "is-accessor-descriptor": "1.0.0",
     "is-data-descriptor": "1.0.0",
-    "debug": "3.1.0",
     "has-value": "1.0.0",
     "set-value": "2.0.0",
     "has-values": "1.0.0",
-    "punycode": "2.1.1",
-    "util": "0.10.4"
+    "util": "0.10.4",
+    "inquirer": "3.3.0",
+    "cross-spawn": "5.1.0",
+    "external-editor": "2.2.0",
+    "chardet": "0.4.2",
+    "yargs-parser": "7.0.0",
+    "commander": "2.13.0",
+    "uglify-js": "2.8.29",
+    "@polymer/polymer": "3.0.0-pre.13",
+    "globby": "6.1.0"
+  },
+  "dependencies": {
+    "@polymer/polymer": "next",
+    "@types/node": "^10.3.3",
+    "@webcomponents/webcomponentsjs": "^2.0.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.1",
+    "html-loader": "^0.5.5",
+    "ts-loader": "^4.4.1",
+    "typescript": "^2.9.2",
+    "webpack": "^4.12.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.0.7"
   }
 }

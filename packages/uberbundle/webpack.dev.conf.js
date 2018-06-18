@@ -9,7 +9,7 @@ module.exports = {
     // 'custom-elements-es5-adapter': ['@webcomponents/webcomponentsjs/custom-elements-es5-adapter'],
     // 'webcomponents-loader': ['@webcomponents/webcomponentsjs/webcomponents-loader'],
     // vendor: ['./src/vendor'],
-    psumancomp2: [
+    uberbundle: [
         './src/index'
     ]
   },

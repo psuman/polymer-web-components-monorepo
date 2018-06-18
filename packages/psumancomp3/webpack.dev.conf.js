@@ -10,7 +10,7 @@ module.exports = {
     // 'webcomponents-loader': ['@webcomponents/webcomponentsjs/webcomponents-loader'],
     // vendor: ['./src/vendor'],
     psumancomp3: [
-        './src/myapp3'
+        './src/index'
     ]
   },
   output: {

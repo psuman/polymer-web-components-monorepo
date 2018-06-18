@@ -289,14 +289,72 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
-/***/ "./src/app.template.html":
-/*!*******************************!*\
-  !*** ./src/app.template.html ***!
-  \*******************************/
+/***/ "../psumancomp1/src/app.template.html":
+/*!********************************************!*\
+  !*** ../psumancomp1/src/app.template.html ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = \"<h1>Hello world.</h1>\\n\";\n\n//# sourceURL=webpack:///./src/app.template.html?");
+eval("module.exports = \"<h1>Hello world.</h1>\\n\";\n\n//# sourceURL=webpack:///../psumancomp1/src/app.template.html?");
+
+/***/ }),
+
+/***/ "../psumancomp1/src/index.ts":
+/*!***********************************!*\
+  !*** ../psumancomp1/src/index.ts ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst polymer_element_1 = __webpack_require__(/*! @polymer/polymer/polymer-element */ \"../../node_modules/@polymer/polymer/polymer-element.js\");\nconst view = __webpack_require__(/*! ./app.template.html */ \"../psumancomp1/src/app.template.html\");\nclass MyApp1 extends polymer_element_1.PolymerElement {\n    constructor() {\n        super();\n    }\n    static get template() {\n        return view;\n    }\n}\nexports.MyApp1 = MyApp1;\ncustomElements.define('my-app1', MyApp1);\n\n\n//# sourceURL=webpack:///../psumancomp1/src/index.ts?");
+
+/***/ }),
+
+/***/ "../psumancomp2/src/app.template.html":
+/*!********************************************!*\
+  !*** ../psumancomp2/src/app.template.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"<h1>Hello world2</h1>\";\n\n//# sourceURL=webpack:///../psumancomp2/src/app.template.html?");
+
+/***/ }),
+
+/***/ "../psumancomp2/src/index.ts":
+/*!***********************************!*\
+  !*** ../psumancomp2/src/index.ts ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst polymer_element_1 = __webpack_require__(/*! @polymer/polymer/polymer-element */ \"../../node_modules/@polymer/polymer/polymer-element.js\");\nconst view = __webpack_require__(/*! ./app.template.html */ \"../psumancomp2/src/app.template.html\");\nclass MyApp2 extends polymer_element_1.PolymerElement {\n    constructor() {\n        super();\n    }\n    static get template() {\n        return view;\n    }\n}\nexports.MyApp2 = MyApp2;\ncustomElements.define('my-app2', MyApp2);\n\n\n//# sourceURL=webpack:///../psumancomp2/src/index.ts?");
+
+/***/ }),
+
+/***/ "../psumancomp3/src/app.template.html":
+/*!********************************************!*\
+  !*** ../psumancomp3/src/app.template.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"<h1>MyAPP3</h1>\\n<my-app1></my-app1>\\n<my-app2></my-app2>\";\n\n//# sourceURL=webpack:///../psumancomp3/src/app.template.html?");
+
+/***/ }),
+
+/***/ "../psumancomp3/src/index.ts":
+/*!***********************************!*\
+  !*** ../psumancomp3/src/index.ts ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst polymer_element_1 = __webpack_require__(/*! @polymer/polymer/polymer-element */ \"../../node_modules/@polymer/polymer/polymer-element.js\");\nconst view = __webpack_require__(/*! ./app.template.html */ \"../psumancomp3/src/app.template.html\");\nclass MyApp3 extends polymer_element_1.PolymerElement {\n    constructor() {\n        super();\n    }\n    static get template() {\n        return view;\n    }\n}\nexports.MyApp3 = MyApp3;\ncustomElements.define('my-app3', MyApp3);\n\n\n//# sourceURL=webpack:///../psumancomp3/src/index.ts?");
 
 /***/ }),
 
@@ -308,7 +366,7 @@ eval("module.exports = \"<h1>Hello world.</h1>\\n\";\n\n//# sourceURL=webpack://
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst polymer_element_1 = __webpack_require__(/*! @polymer/polymer/polymer-element */ \"../../node_modules/@polymer/polymer/polymer-element.js\");\nconst view = __webpack_require__(/*! ./app.template.html */ \"./src/app.template.html\");\nclass MyApp1 extends polymer_element_1.PolymerElement {\n    constructor() {\n        super();\n    }\n    static get template() {\n        return view;\n    }\n}\nexports.MyApp1 = MyApp1;\ncustomElements.define('my-app1', MyApp1);\n\n\n//# sourceURL=webpack:///./src/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__webpack_require__(/*! ../../psumancomp1/src/index */ \"../psumancomp1/src/index.ts\");\n__webpack_require__(/*! ../../psumancomp2/src/index */ \"../psumancomp2/src/index.ts\");\n__webpack_require__(/*! ../../psumancomp3/src/index */ \"../psumancomp3/src/index.ts\");\n\n\n//# sourceURL=webpack:///./src/index.ts?");
 
 /***/ }),
 
