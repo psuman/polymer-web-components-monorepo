@@ -1,5 +1,5 @@
 {
-  "name": "uberbundle",
+  "name": "ecqm-uberbundle",
   "version": "0.3.1",
   "main": "dist/uberbundle.js",
   "flat": true,
