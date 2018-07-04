@@ -1,0 +1,36 @@
+import { PolymerElement } from '@polymer/polymer/polymer-element';
+import '@polymer/iron-icons/iron-icons.js';
+import '@polymer/paper-listbox';
+import '@polymer/paper-icon-button';
+import '@polymer/paper-menu-button';
+import '@polymer/paper-dialog/paper-dialog.js';
+import '@polymer/paper-dropdown-menu/paper-dropdown-menu.js';
+import '@polymer/paper-input/paper-input.js';
+import '@polymer/neon-animation/neon-animations.js';
+import '@polymer/paper-item/paper-item.js';
+import '@polymer/paper-button';
+import * as view from './app.template.html';
+export declare class AddMeasure extends PolymerElement {
+    private shadowRoot;
+    private measureName;
+    private ecqmAbbrevation;
+    private totalMeasue;
+    private dispatchEvent;
+    private measureScoring;
+    private isPatientbased;
+    private invalidMeasureName;
+    private invalidTitle;
+    private invalidScoring;
+    private invalidPatient;
+    private isDirty;
+    private isInvalid;
+    constructor();
+    static readonly template: typeof view;
+    createMeasure(): void;
+    submit(): void;
+    continueForward(): void;
+    isFormValid(e: any): void;
+    reset(): void;
+    cancel(): void;
+    cancel1(): void;
+}

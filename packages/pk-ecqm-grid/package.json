@@ -1,0 +1,35 @@
+{
+  "name": "test-pk-ecqm-grid",
+  "version": "1.0.1",
+  "main": "dist/pkecqmgrid.js",
+  "flat": true,
+  "license": "MIT",
+  "scripts": {
+    "prepare": "webpack --config webpack.dev.conf.js",
+    "clean": "rimraf dist/* && rimraf node_modules"
+  },
+  "dependencies": {
+    "@polymer/iron-form": "^3.0.0-pre.21",
+    "@polymer/iron-icons": "^3.0.0-pre.21",
+    "@polymer/iron-input": "^3.0.0-pre.21",
+    "@polymer/paper-checkbox": "^3.0.0-pre.21",
+    "@polymer/paper-icon-button": "^3.0.0-pre.21",
+    "@polymer/paper-input": "^3.0.0-pre.21",
+    "@polymer/paper-item": "^3.0.0-pre.21",
+    "@polymer/paper-listbox": "^3.0.0-pre.21",
+    "@polymer/paper-menu-button": "^3.0.0-pre.21",
+    "@polymer/polymer": "next",
+    "@webcomponents/webcomponentsjs": "^2.0.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.1",
+    "html-loader": "^0.5.5",
+    "paper-checkbox": "^0.10.0",
+    "ts-loader": "^4.4.1",
+    "typescript": "^2.9.2",
+    "web-animations-js": "^2.3.1",
+    "webpack": "^4.12.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.0.7"
+  }
+}

@@ -1,0 +1,226 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    div {
+        display: block;
+    }
+
+    iron-icon {
+        --iron-icon-fill-color: rgba(0, 0, 0, 0.54);
+    }
+
+    paper-icon-button {
+        color: #455a64;
+    }
+
+    #headerTable {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+    }
+
+    #titleheader {
+        background-color: white !important;
+        border: 1px solid #ddd;
+        background-color: white;
+        height: 48px;
+    }
+
+    #titleheader>th {
+        color: rgba(0, 0, 0, 0.87);
+        font-weight: 500;
+        font-size: 20px;
+        font-family: "Helvetica Neue", sans-serif;
+        padding: 0px 0px 0px 12px;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    #titleheader>th>#label {
+        border-right: 1px solid rgba(0, 0, 0, 0.12);
+        max-width: 160px;
+    }
+
+    #titleheader>th>#addmeasure {
+        text-align: center;
+    }
+
+    #titleheader>th>#filter {
+        text-align: center;
+    }
+
+    #searchheader {
+        width : 78%
+    }
+
+    #filterheader {
+        width : 5%
+    }
+
+    #addmeasureheader {
+        width : 5%
+    }
+
+    #title {
+        width : 12%
+    }
+
+    #myTable {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+    }
+
+    #myTable th {
+        text-align: left;
+        padding: 4px 0px 4px 25px;
+        color: rgba(0, 0, 0, 0.54);
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    #myTable td {
+        text-align: left;
+        padding: 4px 0px 4px 25px;
+        color: rgba(0, 0, 0, 0.87);
+        font-size: 14px;
+        cursor: pointer;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+    }
+
+    #myTable tr {
+        border-bottom: 1px solid #ddd;
+    }
+
+    #myTable tr.header,
+    #myTable tr:hover {
+        background-color: whitesmoke;
+    }
+
+    .header {
+        border: 1px solid #ddd;
+        background-color: white;
+        height: 48px;
+    }
+
+    #createmeasure {
+        --iron-icon-width: 45px;
+        --iron-icon-height: 45px;
+        --iron-icon-fill-color: #455a64;
+        --iron-icon-stroke-color: #455a64;
+    }
+
+    #columns {
+        --iron-icon-width: 20px;
+        --iron-icon-height: 50px;
+        --iron-icon-fill-color: #455a64;
+        --iron-icon-stroke-color: #455a64;
+    }
+
+    paper-item {
+        padding: 0px 16px 0px 16px;
+    }
+
+    paper-listbox {
+        padding: 8px 0px 8px 0px;
+    }
+
+    paper-checkbox {
+        margin: 0px 0px 0px 0px;
+        --paper-checkbox-checked-color: #2196f3;
+        font-size: 15px;
+    }
+
+    #footer {
+        background-color: whitesmoke;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-wrap: nowrap;
+        float: right;
+        padding-right: 20px;
+    }
+
+    .flex-container>div {
+        margin: 10px;
+        text-align: center;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.54);
+    }
+</style>
+<div>
+    <table id="headerTable">
+        <tr id="titleheader">
+            <th id="title" data-message="measureName::string">
+                <div id="label">My Measures</div>
+            </th>
+            <th id="searchheader" data-message="version::string">
+                <div id="search">
+                    <paper-input no-label-float label="Search..." on-keyup="search" value="{{searchValue}}">
+                        <iron-icon icon="search" slot="prefix"></iron-icon>
+                    </paper-input>
+                </div>
+            </th>
+            <th id="filterheader">
+                <div id="filter">
+                    <paper-menu-button>
+                        <paper-icon-button icon="icons:filter-list" slot="dropdown-trigger"></paper-icon-button>
+                        <paper-listbox slot="dropdown-content">
+                            <template is="dom-repeat" items="{{columns}}">
+                                <paper-item>
+                                    <paper-checkbox checked$="{{item.show}}" on-click="columnsChange">{{item.name}}</paper-checkbox>
+                                </paper-item>
+                            </template>
+                        </paper-listbox>
+                    </paper-menu-button>
+                </div>
+            </th>
+            <th id="addmeasureheader">
+                <div id="addmeasure">
+                    <iron-icon id="createmeasure" icon="icons:add-circle" slot="prefix"></iron-icon>
+                </div>
+            </th>
+        </tr>
+    </table>
+</div>
+<div>
+    <table id="myTable">
+        <tr class="header">
+            <template is="dom-repeat" items="{{columns}}">
+                <template is="dom-if" if="{{item.show}}">
+                    <th colspan$="{{item.colspan}}" data-message$="{{item.fieldName}}::{{item.type}}::{{item.sortable}}" on-click="sort">{{item.name}}</th>
+                </template>
+            </template>
+        </tr>
+        <template is="dom-repeat" items="{{data}}" as="row">
+            <tr>
+                <template is="dom-repeat" items="{{columns}}">
+                    <template is="dom-if" if="{{__showAndIcon(item.show, item.type)}}">
+                        <td colspan$="{{item.colspan}}">
+                            <paper-icon-button icon$="{{__getRowData(row,item.fieldName)}}"></paper-icon-button>
+                        </td>
+                    </template>
+                    <template is="dom-if" if="{{__showAndString(item.show, item.type)}}">
+                        <td colspan$="{{item.colspan}}">{{__getRowData(row,item.fieldName)}}</td>
+                    </template>
+                </template>
+            </tr>
+        </template>
+        <tr>
+            <td id="footer" colspan="12">
+                <div class="flex-container">
+                    <div>Items per page: 10</div>
+                    <div>{{pageStart}}-{{pageEnd}} of {{masterData.length}}</div>
+                    <paper-icon-button on-click="previousPage" disabled$="{{isFirstPage}}" icon="icons:chevron-left"></paper-icon-button>
+                    <paper-icon-button on-click="nextPage" disabled$="{{isLastPage}}" icon="icons:chevron-right"></paper-icon-button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+</div>
