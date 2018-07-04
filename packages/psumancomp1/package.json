@@ -1,6 +1,6 @@
 {
   "name": "psumancomp1",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "dist/psumancomp1.js",
   "flat": true,
   "license": "MIT",
