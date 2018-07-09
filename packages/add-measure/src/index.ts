@@ -47,6 +47,7 @@ export class AddMeasure extends PolymerElement {
     createMeasure() {
         this.shadowRoot.getElementById('createmeasureDialog').open();
         this.shadowRoot.getElementById('papermenubutton').opened = false;
+        this.dispatchEvent(new CustomEvent('dialogopened'));
     }
     submit() {
       
@@ -116,14 +117,17 @@ export class AddMeasure extends PolymerElement {
     
         this.shadowRoot.getElementById('createmeasureDialog').close();
         this.reset();
-      
+
+        this.dispatchEvent(new CustomEvent('dialogclosed'));
 
     }
     cancel1() {
        
         this.shadowRoot.getElementById('continue').close();
         this.shadowRoot.getElementById('createmeasureDialog').close();
-        this.reset();
+
+        this.reset(); 
+         this.dispatchEvent(new CustomEvent('dialogclosed'));
     }
 
 }
