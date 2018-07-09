@@ -1,11 +1,11 @@
 {
   "name": "ecqm-grid",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "main": "dist/pkecqmgrid.js",
   "flat": true,
   "license": "MIT",
   "scripts": {
-    "prepare": "webpack --config webpack.dev.conf.js --watch",
+    "prepare": "webpack --config webpack.dev.conf.js",
     "clean": "rimraf dist/* && rimraf node_modules"
   },
   "dependencies": {
