@@ -5,7 +5,7 @@
   "flat": true,
   "license": "MIT",
   "scripts": {
-    "prepare": "webpack --config webpack.dev.conf.js",
+    "prepare": "webpack --config webpack.dev.conf.js --watch",
     "clean": "rimraf dist/* && rimraf node_modules"
   },
   "dependencies": {

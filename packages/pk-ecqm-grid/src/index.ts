@@ -23,10 +23,12 @@ export class MeasuresGrid extends PolymerElement {
     private pageEnd: number = 10;
     public isFirstPage: boolean = true;
     public isLastPage: boolean = true;
+    public dataLength: number = 0;
     public isInvalid: boolean = true;
     private firstInvalid: boolean = false;
     private secondInvalid: boolean = false;
     private isDirty: boolean = false;
+	private isInitialized = false;
 
     constructor() {
         super();
@@ -34,20 +36,17 @@ export class MeasuresGrid extends PolymerElement {
 
     ready() {
         super.ready();
-        this.masterData = this.data;
-        if (this.masterData.length > 10) {
-            this.isFirstPage = true;
-            this.isLastPage = false;
-            this.pageStart = 1;
-            this.pageEnd = 10;
-        } else {
-            this.isFirstPage = true;
-            this.isLastPage = true;
-            this.pageStart = 1;
-            this.pageEnd = this.masterData.length + 1;
-        }
-        this.rerenderData(this.masterData);
     }
+	
+	__init() {
+		if(!this.isInitialized && this.data && this.data.length > 0){
+			this.masterData = this.data;
+			this.dataLength = this.masterData.length;
+			this.loadPagination(this.data);
+			this.isInitialized = true;
+			this.rerenderData(this.data);
+		}
+	}
 
     static get properties() {
         return {
@@ -57,7 +56,8 @@ export class MeasuresGrid extends PolymerElement {
             data: {
                 type: Array,
                 notify: true,
-                reflectToAttribute: true
+                reflectToAttribute: true,
+				observer: '__init'
             },
             columns: {
                 type: Array,
@@ -67,10 +67,25 @@ export class MeasuresGrid extends PolymerElement {
         };
     }
 
+    loadPagination(dataObj) {
+		if (dataObj.length > 10) {
+            this.isFirstPage = true;
+            this.isLastPage = false;
+            this.pageStart = 1;
+            this.pageEnd = 10;
+        } else {
+            this.isFirstPage = true;
+            this.isLastPage = true;
+            this.pageStart = 1;
+            this.pageEnd = dataObj.length ;
+        }
+    }
+
     rerenderData(dataObj) {
+		this.dataLength = dataObj.length;
         let tempData = dataObj.slice(this.pageStart - 1, this.pageEnd);
-        this.data = [];
-        this.data = tempData;
+		this.data = [];
+		this.data = tempData;
     }
 
     previousPage() {
@@ -99,7 +114,7 @@ export class MeasuresGrid extends PolymerElement {
     }
 
     checkPageStatus() {
-        if (this.pageEnd === this.masterData.length) {
+        if (this.pageEnd === this.data.length) {
             this.isLastPage = true;
         } else {
             this.isLastPage = false;
@@ -116,7 +131,6 @@ export class MeasuresGrid extends PolymerElement {
         if (!columnName) {
             return;
         }
-        console.log(columnName);
         let filteredCols = this.columns.filter((each) => {
             if (each.name === columnName.toUpperCase()) {
                 each.show = e.target.checked;
@@ -126,10 +140,9 @@ export class MeasuresGrid extends PolymerElement {
 
         this.columns = [];
         this.columns = JSON.parse(JSON.stringify(filteredCols));
-
-        this.data = [];
-        this.data = JSON.parse(JSON.stringify(this.masterData));
-        console.log(this.columns);
+		
+		this.loadPagination(this.data);
+        this.rerenderData(this.data);
     }
 
     __getRowData(row, fieldName) {
@@ -205,9 +218,11 @@ export class MeasuresGrid extends PolymerElement {
     search() {
         let searchVal = this.searchValue.toUpperCase();
         if (searchVal === '') {
+			this.loadPagination(this.masterData);
             this.rerenderData(this.masterData);
+			return;
         }
-        let tempData = this.data.filter(each => {
+        let tempData = this.masterData.filter(each => {
             let hasFound = false;
             for (let i in each) {
                 if (each[i] && each[i].toUpperCase().indexOf(searchVal) != -1) {
@@ -218,6 +233,7 @@ export class MeasuresGrid extends PolymerElement {
             }
             return hasFound;
         });
+		this.loadPagination(tempData);
         this.rerenderData(tempData);
     }
 }

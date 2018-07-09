@@ -21,12 +21,15 @@ export declare class MeasuresGrid extends PolymerElement {
     private pageEnd;
     isFirstPage: boolean;
     isLastPage: boolean;
+    dataLength: number;
     isInvalid: boolean;
     private firstInvalid;
     private secondInvalid;
     private isDirty;
+    private isInitialized;
     constructor();
     ready(): void;
+    __init(): void;
     static readonly properties: {
         title: {
             type: StringConstructor;
@@ -35,6 +38,7 @@ export declare class MeasuresGrid extends PolymerElement {
             type: ArrayConstructor;
             notify: boolean;
             reflectToAttribute: boolean;
+            observer: string;
         };
         columns: {
             type: ArrayConstructor;
@@ -42,6 +46,7 @@ export declare class MeasuresGrid extends PolymerElement {
             reflectToAttribute: boolean;
         };
     };
+    loadPagination(dataObj: any): void;
     rerenderData(dataObj: any): void;
     previousPage(): void;
     nextPage(): void;
