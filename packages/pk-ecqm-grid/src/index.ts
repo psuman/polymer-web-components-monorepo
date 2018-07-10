@@ -29,14 +29,19 @@ export class MeasuresGrid extends PolymerElement {
     private firstInvalid: boolean = false;
     private secondInvalid: boolean = false;
     private isDirty: boolean = false;
-	private isInitialized = false;
-
+    private isInitialized = false;
+    private $:any;
+    private dispatchEvent:any;
+    
     constructor() {
         super();
     }
 
     ready() {
         super.ready();
+        this.$.addmeasuredom.addEventListener('submit', e => {
+            this.dispatchEvent(new CustomEvent('add-measure-submit', {detail: e}));
+        });
     }
 	
 	__init() {

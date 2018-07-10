@@ -28,6 +28,8 @@ export declare class MeasuresGrid extends PolymerElement {
     private secondInvalid;
     private isDirty;
     private isInitialized;
+    private $;
+    private dispatchEvent;
     constructor();
     ready(): void;
     __init(): void;
