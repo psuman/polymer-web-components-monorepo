@@ -40,7 +40,13 @@ export class MeasuresGrid extends PolymerElement {
     ready() {
         super.ready();
         this.$.addmeasuredom.addEventListener('submit', e => {
-            this.dispatchEvent(new CustomEvent('add-measure-submit', {detail: e}));
+            this.dispatchEvent(new CustomEvent('add-measure-submit', e));
+        });
+        this.$.addmeasuredom.addEventListener('dialogclosed', e => {
+            this.dispatchEvent(new CustomEvent('add-measure-close', e));
+        });
+        this.$.addmeasuredom.addEventListener('dialogopened', e => {
+            this.dispatchEvent(new CustomEvent('add-measure-opened', e));
         });
     }
 	
