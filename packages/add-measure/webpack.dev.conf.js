@@ -6,9 +6,6 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'development',
   entry: {
-    // 'custom-elements-es5-adapter': ['@webcomponents/webcomponentsjs/custom-elements-es5-adapter'],
-    // 'webcomponents-loader': ['@webcomponents/webcomponentsjs/webcomponents-loader'],
-    // vendor: ['./src/vendor'],
     addmeasure: [
         './src/index'
     ]
@@ -17,6 +14,16 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
+  optimization: {
+  splitChunks: {
+	cacheGroups: {
+		commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+	}
+  }},
   module: {
     rules: [
       {

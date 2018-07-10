@@ -8,8 +8,9 @@ import '@polymer/paper-listbox/paper-listbox.js';
 import '@polymer/paper-item/paper-item.js';
 import '@polymer/paper-checkbox/paper-checkbox.js';
 import '@polymer/iron-icons/social-icons.js';
-import '@polymer/neon-animation/neon-animations.js'
+import '@polymer/neon-animation/neon-animations.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
+import '../../add-measure/src/index';
 import * as view from './app.template.html';
 
 export class MeasuresGrid extends PolymerElement {

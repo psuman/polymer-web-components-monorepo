@@ -6,6 +6,7 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'development',
   entry: {
+    vendors:['@polymer/polymer'],
     pkecqmgrid: [
         './src/index'
     ]
@@ -13,6 +14,17 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
+  },
+  optimization: {
+	splitChunks: {
+		cacheGroups: {
+			commons: {
+				test: /[\\/]node_modules[\\/]/,
+				name: 'vendors',
+				chunks: 'all'
+			}
+		}
+	}
   },
   module: {
     rules: [
