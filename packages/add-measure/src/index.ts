@@ -20,13 +20,13 @@ export class AddMeasure extends PolymerElement {
     private dispatchEvent: any;
     private measureScoring: string;
     private isPatientbased: string;
-    private invalidMeasureName:boolean = false;
-    private invalidTitle:boolean = false;
-    private invalidScoring:boolean = false;
-    private invalidPatient:boolean = false;
-    private isDirty:boolean=false;
-    private isInvalid:boolean=true;
-   
+    private invalidMeasureName: boolean = false;
+    private invalidTitle: boolean = false;
+    private invalidScoring: boolean = false;
+    private invalidPatient: boolean = false;
+    private isDirty: boolean = false;
+    public isInvalid: boolean = true;
+
     constructor() {
         super();
         this.isPatientbased = "",
@@ -34,23 +34,23 @@ export class AddMeasure extends PolymerElement {
         this.ecqmAbbrevation = "",
         this.measureScoring = ""
         this.isDirty = false;
-        this.invalidMeasureName = false;        
+        this.invalidMeasureName = false;
         this.invalidTitle = false;
-        this.invalidScoring=false;   
-        this.invalidPatient=false;        
+        this.invalidScoring = false;
+        this.invalidPatient = false;
         this.isInvalid = true;
     }
 
     static get template() {
         return view;
     }
+
     createMeasure() {
         this.shadowRoot.getElementById('createmeasureDialog').open();
         this.shadowRoot.getElementById('papermenubutton').opened = false;
         this.dispatchEvent(new CustomEvent('dialogopened'));
     }
     submit() {
-      
         this.shadowRoot.getElementById('continue').open();
     }
     continueForward() {
@@ -60,74 +60,56 @@ export class AddMeasure extends PolymerElement {
             "measureScoring": this.measureScoring,
             "isPatientbased": this.isPatientbased,
         }
-        console.log("enterd in child"+this.isInvalid);
-
         this.dispatchEvent(new CustomEvent('submit', { detail: { value: JSON.stringify(this.totalMeasue) } }));
-    } isFormValid(e){
-        console.log('Form uyf valid');
-        if(!this.isDirty){
-        
-        this.invalidMeasureName = true;
-        
-        this.invalidTitle = true;
-        
-        this.invalidPatient = true; 
-        this.invalidScoring = true;
-        this.isDirty = true;
+
+        this.cancel1();
+    }
+
+    isFormValid(e) {
+        if (!this.isDirty) {
+            this.invalidMeasureName = true;
+            this.invalidTitle = true;
+            this.invalidPatient = true;
+            this.invalidScoring = true;
+            this.isDirty = true;
         }
         console.log(e.target.value);
-        if(e.target.value !== '' ){
-        
-        e.target.invalid = false;
-        
-        }else{
-        
-        e.target.invalid = true;
-        
-        this.isInvalid = true;
-        
+        if (e.target.value !== '') {
+            e.target.invalid = false;
+        } else {
+            e.target.invalid = true;
+            this.isInvalid = true;
         }
-        
-        if(!this.invalidMeasureName && !this.invalidTitle && !this.invalidPatient && !this.invalidScoring){
-        
-        console.log('Form is valid');
-        
-        this.isInvalid = false;
-        
-        }
-        
+        if (!this.invalidMeasureName && !this.invalidTitle && !this.invalidPatient && !this.invalidScoring) {
+            this.isInvalid = false;
         }
 
- reset(){
+    }
 
+    reset() {
         this.isPatientbased = "",
         this.measureName = "",
         this.ecqmAbbrevation = "",
         this.measureScoring = ""
         this.isDirty = false;
-        this.invalidMeasureName = false;        
+        this.invalidMeasureName = false;
         this.invalidTitle = false;
-        this.invalidScoring=false;   
-        this.invalidPatient=false;        
+        this.invalidScoring = false;
+        this.invalidPatient = false;
         this.isInvalid = true;
-        
-        }
-        
-    cancel() {
-    
-        this.shadowRoot.getElementById('createmeasureDialog').close();
-        this.reset();
-
-        this.dispatchEvent(new CustomEvent('dialogclosed'));
 
     }
+
+    cancel() {
+        this.shadowRoot.getElementById('createmeasureDialog').close();
+        this.reset();
+        this.dispatchEvent(new CustomEvent('dialogclosed'));
+    }
     cancel1() {
-       
         this.shadowRoot.getElementById('continue').close();
         this.shadowRoot.getElementById('createmeasureDialog').close();
-
-        this.reset(); 
-         this.dispatchEvent(new CustomEvent('dialogclosed'));
+        this.reset();
+        this.dispatchEvent(new CustomEvent('dialogclosed'));
     }
 
 }

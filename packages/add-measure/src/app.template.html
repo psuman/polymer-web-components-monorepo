@@ -2,6 +2,7 @@
   body {
     line-height: normal;
     font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
+    text-align: center;
   }
 
   paper-icon-button {
@@ -22,6 +23,8 @@
     width: 100%;
   }
 
+
+
   @media (min-width: 768px) {
     paper-item {
       font-size: 16px;
@@ -37,50 +40,57 @@
       width: 100%;
       margin-top: 20px;
     }
-
+    .custom2 {
+      width: 100%;
+    }
     .dropdown {
-      width: 650px;
+      width: 360px;
     }
-    #continue {
-      padding: 25px;
-      width: 55%;
-      margin-top: 0em;
-    }
-    h2 {
-      margin: 0 0 20px;
-    }
-    .content {
-      color: #3c763d;
-      font-size: 18px;
-    }
-    paper-button {
-      font-size: 14px;
-      font-weight: 500;
-      font-style: normal;
-      font: 400 13.3333px Arial;
+  }
 
-      line-height: 36px;
-      border-radius: 2px;
-      padding: 0 16px;
-    }
-    .submit[enabled] {
-      color: white;
-      background-color: #2196f3;
-    }
-    .continue
-    {
-      color: white;
-      background-color: #2196f3;
-    }
+  #continue {
+    padding: 25px;
+    width: 55%;
+    margin-top: 0em;
+  }
 
-    .cancel {
-      background-color: #f44336;
-      color: white;
-      margin-left: 20px;
+  h2 {
+    margin: 0 0 20px;
+  }
 
-    }
+  .content {
+    color: #3c763d;
+    font-size: 18px;
+  }
+
+  paper-button {
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font: 400 13.3333px Arial;
+
+    line-height: 36px;
+    border-radius: 2px;
+    padding: 0 16px;
+  }
+
+  .submit[enabled] {
+    color: white;
+    background-color: #2196f3;
+  }
+
+  .continue {
+    color: white;
+    background-color: #2196f3;
+  }
+
+  .cancel {
+    background-color: #f44336;
+    color: white;
+    margin-left: 20px;
 
   }
+
 
   @media (max-width: 425px) {
 
@@ -107,6 +117,13 @@
     h2 {
       margin: 0 0 10px;
     }
+
+    paper-dropdown-menu {
+      position: absolute !important;
+      top: 8px !important;
+      right: 8px !important;
+    }
+    ;
     .content {
       color: #3c763d;
       font-size: 12px;
@@ -125,8 +142,7 @@
       color: white;
       background-color: #2196f3;
     }
-    .continue
-    {
+    .continue {
       color: white;
       background-color: #2196f3;
     }
@@ -181,8 +197,7 @@
       color: white;
       background-color: #2196f3;
     }
-    .continue
-    {
+    .continue {
       color: white;
       background-color: #2196f3;
     }
@@ -191,27 +206,35 @@
       color: white;
       margin-left: 6px;
     }
-    paper-input {
-      padding: 0px
-    }
+ 
   }
+
+  paper-menu-button {
+    float : right;
+  }
+</style>
+   <style is="custom-style">
+
+    paper-input{
+   --paper-input-container-focus-color: #455a64;
+}
 </style>
 
 <div class="gg">
-<paper-menu-button id="papermenubutton">
-  <paper-icon-button icon="add" slot="dropdown-trigger">
+  <paper-menu-button on-tap="triggerred" horizontal-align="right" id="papermenubutton">
+    <paper-icon-button icon="add" slot="dropdown-trigger">
 
-  </paper-icon-button>
-  <paper-listbox slot="dropdown-content">
-    <paper-item on-tap="createMeasure">New Measure</paper-item>
-    <paper-item>Upload Measure</paper-item>
-  </paper-listbox>
-</paper-menu-button>
+    </paper-icon-button>
+    <paper-listbox slot="dropdown-content">
+      <paper-item on-tap="createMeasure">New Measure</paper-item>
+      <paper-item>Upload Measure</paper-item>
+    </paper-listbox>
+  </paper-menu-button>
 </div>
 <paper-dialog id="createmeasureDialog">
   <form id="form_id" is="iron-form">
     <div class="formgroup">
-      <paper-input label="Measure Name*" value="{{measureName}}" required auto-validate on-keyup="isFormValid" invalid="{{invalidMeasureName}}"></paper-input>
+      <paper-input  label="Measure Name*" value="{{measureName}}" required auto-validate on-keyup="isFormValid" invalid="{{invalidMeasureName}}"></paper-input>
 
     </div>
     <div class="formgroup">
@@ -219,20 +242,21 @@
       <paper-input label="eCQM Abbreviated Title*" value="{{ecqmAbbrevation}}" required auto-validate on-keyup="isFormValid" invalid="{{invalidTitle}}"></paper-input>
     </div>
     <div class="formgroup">
-      <paper-dropdown-menu label="Measure Scoring*" required auto-validate on-selected-item-changed="isFormValid" invalid="{{invalidScoring}}"
-        class="formelement">
-        <paper-listbox class="dropdown" selected="{{measureScoring}}" attr-for-selected="name" slot="dropdown-content">
+      <paper-dropdown-menu class="custom2" label="Measure Scoring*" required auto-validate on-selected-item-changed="isFormValid"
+        invalid="{{invalidScoring}}" class="formelement">
+        <paper-listbox class="custom2" selected="{{measureScoring}}" attr-for-selected="name" slot="dropdown-content">
           <paper-item name="Cohort">Cohort</paper-item>
           <paper-item name="brontosaurus">brontosaurus</paper-item>
           <paper-item name="carcharodontosaurus">carcharodontosaurus</paper-item>
           <paper-item name="diplodocus">diplodocus</paper-item>
         </paper-listbox>
       </paper-dropdown-menu>
+
     </div>
     <div class="formgroup">
-      <paper-dropdown-menu label="Patient-based Measure*"   on-selected-item-changed="isFormValid" required auto-validate invalid="{{invalidPatient}}" 
+      <paper-dropdown-menu label="Patient-based Measure*" on-selected-item-changed="isFormValid" required auto-validate invalid="{{invalidPatient}}"
         class="formelement">
-        <paper-listbox class="dropdown"selected="{{isPatientbased}}" attr-for-selected="name" slot="dropdown-content">
+        <paper-listbox class="dropdown" selected="{{isPatientbased}}" attr-for-selected="name" slot="dropdown-content">
           <paper-item name="Yes">Yes</paper-item>
           <paper-item name="No">No</paper-item>
         </paper-listbox>
