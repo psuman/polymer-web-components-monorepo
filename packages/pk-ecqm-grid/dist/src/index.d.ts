@@ -15,6 +15,7 @@ import * as view from './app.template.html';
 export declare class MeasuresGrid extends PolymerElement {
     private data;
     private masterData;
+    pageData: Array<any>;
     private sortDirection;
     private searchValue;
     private columns;
@@ -23,16 +24,11 @@ export declare class MeasuresGrid extends PolymerElement {
     isFirstPage: boolean;
     isLastPage: boolean;
     dataLength: number;
-    isInvalid: boolean;
-    private firstInvalid;
-    private secondInvalid;
-    private isDirty;
     private isInitialized;
     private $;
     private dispatchEvent;
     constructor();
     ready(): void;
-    __init(): void;
     static readonly properties: {
         title: {
             type: StringConstructor;
@@ -53,15 +49,12 @@ export declare class MeasuresGrid extends PolymerElement {
     rerenderData(dataObj: any): void;
     previousPage(): void;
     nextPage(): void;
-    checkPageStatus(): void;
     columnsChange(e: any): void;
+    __init(): void;
     __getRowData(row: any, fieldName: any): any;
     __showAndString(show: any, type: any): boolean;
     __showAndIcon(show: any, type: any): boolean;
     sort(e: any): void;
     static readonly template: typeof view;
-    _submitForm(): void;
-    isFormValid(e: any): void;
-    reset(): void;
     search(): void;
 }

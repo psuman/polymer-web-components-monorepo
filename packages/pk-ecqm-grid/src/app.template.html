@@ -132,6 +132,9 @@
     paper-checkbox {
         margin: 0px 0px 0px 0px;
         --paper-checkbox-checked-color: #2196f3;
+		--paper-checkbox-label-color : rgba(0, 0, 0, 0.87);
+		--paper-checkbox-unchecked-color : rgba(0, 0, 0, 0.54);
+		font-weight : 500;
         font-size: 15px;
     }
 
@@ -152,6 +155,10 @@
         font-size: 12px;
         color: rgba(0, 0, 0, 0.54);
     }
+	
+	paper-input {
+		--paper-input-container-focus-color : #455a64;
+	}
 </style>
 <div>
     <table id="headerTable">
@@ -168,9 +175,9 @@
             </th>
             <th id="filterheader">
                 <div id="filter">
-                    <paper-menu-button>
+                    <paper-menu-button horizontal-align = "right" ignore-select>
                         <paper-icon-button icon="icons:filter-list" slot="dropdown-trigger"></paper-icon-button>
-                        <paper-listbox slot="dropdown-content">
+                        <paper-listbox slot="dropdown-content" multi>
                             <template is="dom-repeat" items="{{columns}}">
                                 <paper-item>
                                     <paper-checkbox checked$="{{item.show}}" on-click="columnsChange">{{item.name}}</paper-checkbox>
@@ -198,7 +205,7 @@
                 </template>
             </template>
         </tr>
-        <template is="dom-repeat" items="{{data}}" as="row">
+        <template is="dom-repeat" items="{{pageData}}" as="row">
             <tr>
                 <template is="dom-repeat" items="{{columns}}">
                     <template is="dom-if" if="{{__showAndIcon(item.show, item.type)}}">
