@@ -23,7 +23,7 @@ export declare class AddMeasure extends PolymerElement {
     private invalidScoring;
     private invalidPatient;
     private isDirty;
-    private isInvalid;
+    isInvalid: boolean;
     constructor();
     static readonly template: typeof view;
     createMeasure(): void;
