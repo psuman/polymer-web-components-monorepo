@@ -1,11 +1,11 @@
 {
   "name": "pk-bonnie-testmeasure",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "main": "dist/testmeasure.js",
   "flat": true,
   "license": "MIT",
   "scripts": {
-    "prepare": "webpack --config webpack.dev.conf.js --watch",
+    "prepare": "webpack --config webpack.dev.conf.js",
     "clean": "rimraf dist/* && rimraf node_modules",
     "start:dev": "webpack-dev-server"
   },
