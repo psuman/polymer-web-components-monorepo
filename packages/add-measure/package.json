@@ -1,6 +1,6 @@
 {
   "name": "ecqm-add-measure",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/addmeasure.js",
   "flat": true,
   "license": "MIT",
