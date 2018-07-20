@@ -50,6 +50,7 @@ module.exports = {
         flatten: true
       }
     ]),
-    new CopyWebpackPlugin(['index.html'])
+    new CopyWebpackPlugin(['index.html']),
+    new CopyWebpackPlugin(['../../node_modules/web-animations-js/web-animations-next-lite.min.js'])
   ]
 };
