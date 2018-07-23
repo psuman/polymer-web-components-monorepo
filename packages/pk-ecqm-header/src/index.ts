@@ -15,6 +15,7 @@ import '@polymer/paper-dialog-scrollable/paper-dialog-scrollable.js';
 export class Header extends PolymerElement {
     public name: string = "";
     shadowRoot: any;
+    private dispatchEvent: any;
     notifications: Array<any> = [];
     openDialog() {
         this.shadowRoot.getElementById('model').open();
@@ -57,6 +58,11 @@ export class Header extends PolymerElement {
         } else {
             showoption.style.display = "none";
         }
+    }
+
+    logout() {
+        console.log('Loggging out');
+        this.dispatchEvent(new CustomEvent('logout'));
     }
 
 }

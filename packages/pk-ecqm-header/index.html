@@ -23,6 +23,12 @@
     { "icon": "code", "name": "John added you as a frind", "time": "yesterday" } ]' name="David Smith"></pk-ecqm-header>
 
     <script type="text/javascript" src="pkecqmheader.js"></script>
+    <script>
+            document.querySelector('pk-ecqm-header').addEventListener('logout', function (e) {
+              //update the data
+              console.log('Successfully Logged Out');
+           })
+        </script>
 </body>
 
 </html>

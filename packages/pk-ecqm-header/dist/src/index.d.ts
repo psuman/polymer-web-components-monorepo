@@ -14,6 +14,7 @@ import '@polymer/paper-dialog-scrollable/paper-dialog-scrollable.js';
 export declare class Header extends PolymerElement {
     name: string;
     shadowRoot: any;
+    private dispatchEvent;
     notifications: Array<any>;
     openDialog(): void;
     constructor();
@@ -28,4 +29,5 @@ export declare class Header extends PolymerElement {
     };
     shownotifications(): void;
     showoptions(): void;
+    logout(): void;
 }
