@@ -1,6 +1,6 @@
 {
   "name": "pk-ecqm-header",
-  "version": "0.7.0",
+  "version": "1.2.0",
   "main": "dist/pkecqmheader.js",
   "flat": true,
   "license": "MIT",
