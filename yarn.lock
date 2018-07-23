@@ -216,6 +216,15 @@
     "@polymer/paper-styles" "^3.0.0-pre.21"
     "@polymer/polymer" "^3.0.0"
 
+"@polymer/paper-dialog-scrollable@^3.0.0-pre.21":
+  version "3.0.0-pre.21"
+  resolved "https://registry.yarnpkg.com/@polymer/paper-dialog-scrollable/-/paper-dialog-scrollable-3.0.0-pre.21.tgz#d3747def9b52eb58c09e3de62b6d56c301a9de8d"
+  dependencies:
+    "@polymer/iron-flex-layout" "^3.0.0-pre.21"
+    "@polymer/paper-dialog-behavior" "^3.0.0-pre.21"
+    "@polymer/paper-styles" "^3.0.0-pre.21"
+    "@polymer/polymer" "^3.0.0"
+
 "@polymer/paper-dialog@^3.0.0-pre.21":
   version "3.0.0-pre.21"
   resolved "https://registry.yarnpkg.com/@polymer/paper-dialog/-/paper-dialog-3.0.0-pre.21.tgz#7208f533b76e6487f0117afb937f9dd9173b3bb1"
@@ -239,6 +248,13 @@
     "@polymer/paper-menu-button" "^3.0.0-pre.21"
     "@polymer/paper-ripple" "^3.0.0-pre.21"
     "@polymer/paper-styles" "^3.0.0-pre.21"
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/paper-header-panel@^3.0.0-pre.21":
+  version "3.0.0-pre.21"
+  resolved "https://registry.yarnpkg.com/@polymer/paper-header-panel/-/paper-header-panel-3.0.0-pre.21.tgz#b84aeab192cd64a330c3c686514de2093a8286ac"
+  dependencies:
+    "@polymer/iron-flex-layout" "^3.0.0-pre.21"
     "@polymer/polymer" "^3.0.0"
 
 "@polymer/paper-icon-button@^3.0.0-pre.21":
@@ -305,6 +321,21 @@
   dependencies:
     "@polymer/font-roboto" "^3.0.0-pre.21"
     "@polymer/iron-flex-layout" "^3.0.0-pre.21"
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/paper-tabs@^3.0.0-pre.21":
+  version "3.0.0-pre.21"
+  resolved "https://registry.yarnpkg.com/@polymer/paper-tabs/-/paper-tabs-3.0.0-pre.21.tgz#d408b3f7462b4762f34e283af67513c723d7e28f"
+  dependencies:
+    "@polymer/iron-behaviors" "^3.0.0-pre.21"
+    "@polymer/iron-flex-layout" "^3.0.0-pre.21"
+    "@polymer/iron-icon" "^3.0.0-pre.21"
+    "@polymer/iron-iconset-svg" "^3.0.0-pre.21"
+    "@polymer/iron-menu-behavior" "^3.0.0-pre.21"
+    "@polymer/iron-resizable-behavior" "^3.0.0-pre.21"
+    "@polymer/paper-behaviors" "^3.0.0-pre.21"
+    "@polymer/paper-icon-button" "^3.0.0-pre.21"
+    "@polymer/paper-styles" "^3.0.0-pre.21"
     "@polymer/polymer" "^3.0.0"
 
 "@polymer/polymer@3.0.0-pre.13", "@polymer/polymer@^3.0.0", "@polymer/polymer@next":

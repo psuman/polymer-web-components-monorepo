@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BreadCrumb Test</title>
+    <script src="webcomponentsjs/webcomponents-loader.js"></script>
+    <script>
+        function hello() {
+            console.log('Hello');
+            document.querySelector('pk-ecqm-breadcrumbs')
+        }
+    </script>
+</head>
+
+<body>
+    <pk-ecqm-header notifications='[ { "icon": "social:notifications","name": "This is a notification", "time": "few sec ago"}, 
+    { "icon": "shopping-basket","name": "User bought your template", "time": "23 min ago"}, 
+    { "icon": "eject", "name": "Server Crashed", "time": "an hour ago" },    
+    { "icon": "cached", "name": "New user registered", "time": "6 hours ago" },
+    { "icon": "code", "name": "John added you as a frind", "time": "yesterday" } ]' name="David Smith"></pk-ecqm-header>
+
+    <script type="text/javascript" src="pkecqmheader.js"></script>
+</body>
+
+</html>

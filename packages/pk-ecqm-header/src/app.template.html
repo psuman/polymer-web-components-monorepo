@@ -1,0 +1,292 @@
+<style>
+  html,
+  body {
+    margin: 0%;
+    min-height: 100%;
+    height: 100%;
+    line-height: normal;
+    font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: #111;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+  }
+
+  .flex-container {
+    display: flex;
+    align-items: stretch;
+    background-color: white;
+    position: relative;
+    box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+  }
+
+  .flex-container>.main {
+    color: #333;
+    width: 80px;
+    margin: 0.3%;
+    text-align: right;
+    line-height: 50px;
+    font-size: 25px;
+  }
+
+  .icon {
+    margin-right: 15px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 25px;
+    padding: 0%;
+    width: 25px
+  }
+
+  #model {
+    position: fixed;
+    margin: 0px;
+    top: 0px;
+    right: 0px;
+    width: 20%;
+    height: 100%;
+    overflow: auto;
+    text-align: justify;
+
+  }
+
+  .person {
+    background: #4c404054;
+    color: white;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+
+
+  .dropdown {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer
+  }
+
+  #dropdown-content1 {
+    text-align: start;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    z-index: -2;
+    margin-top: 31%;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  }
+
+  #dropdown-content2 {
+    text-align: start;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    right: 30%;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    border: none;
+    min-width: 400px;
+    z-index: -2;
+    margin-top: 100%;
+    line-height: normal
+  }
+
+  .header {
+    color: #555;
+    font-size: 18px;
+  }
+
+  .title {
+    display: inline-block;
+    line-height: normal;
+    color: #666;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .time {
+    font-size: 12px;
+  }
+
+  .divider {
+    width: calc(100% - 30px);
+    height: 1px;
+    background: #e0e0e0;
+    margin: 0 16px 0 14px;
+  }
+
+  .item {
+    padding-left: 6%;
+    padding-right: 6%;
+    font-size: 18px;
+  }
+
+  paper-tabs {
+
+    padding: 0%;
+    font-size: 14px;
+    margin: 0%;
+    flex-grow: 1;
+    position: relative;
+    transform: translate3d(0px, 0px, 0px);
+    color: rgba(0, 0, 0, 0.87);
+    --paper-tabs-selection-bar-color: rgba(0, 0, 0, 0.87);
+  }
+
+
+  paper-tab {
+    height: 125%;
+    padding: 0%;
+  }
+
+  .noticationicons {
+    padding: 0%;
+    height: 28px;
+    width: 28px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-right: 13px;
+    text-align: center;
+    border-radius: 50%;
+    background: #FFF;
+    color: #888;
+    border: 1px solid #EEE;
+    display: inline-block;
+  }
+
+  .close {
+    padding: 0%;
+    height: 20px;
+    width: 20px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-right: 13px;
+    text-align: center;
+    border-radius: 50%;
+    background: #FFF;
+    color: #888;
+    border: 1px solid #EEE;
+    display: inline-block;
+
+  }
+
+  .notificationcontent {
+    display: flex;
+    max-height: 100%;
+    place-content: center flex-start;
+    align-items: center;
+    min-height: 64px;
+    padding: 0 16px 0 14px;
+    position: relative;
+    color: #666;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .show {
+    display: block
+  }
+</style>
+
+<div class="flex-container">
+
+  <div class="main" style="flex-grow: 0.5">eCQM</div>
+  <div class="main" style="flex-grow: 3"></div>
+  <div class="main" style="flex-grow: 12">
+    <div class="dropdown">
+      <paper-icon-button on-click="shownotifications" class="icon" icon="social:notifications-active"></paper-icon-button>
+
+      <div id="dropdown-content2" style="display: none;">
+        <div class="header" style="display: flex; max-height: 100%; place-content: center space-between; align-items: center;     margin: 3%">
+          <div class="title" style="font-size: 18px;
+                       
+                          color: rgba(0, 0, 0, 0.87);
+                       ">
+            <div class="name" style="
+                            font-size: 18px;
+                             color: #111;
+                            -webkit-tap-highlight-color: transparent;                          
+                            line-height: normal; 
+
+                        ">Notifications</div>
+            <div class="extra" style="
+                            font-size: 12px;
+                          color: #888;
+                          line-height: normal;
+                        ;">You have {{ notifications.length }} new notifications.</div>
+
+          </div>
+          <paper-icon-button on-click="ss" class="icon" icon="settings"></paper-icon-button>
+        </div>
+
+        <template is="dom-repeat" items="{{notifications}}">
+
+          <div class="notificationcontent">
+            <paper-icon-button class="notificationicon" icon="{{ item.icon }}"></paper-icon-button>
+
+
+            <div class="title">
+              <div class="name">{{ item.name }}</div>
+              <div class="time">{{ item.time }}</div>
+            </div>
+            <div class="main" style="flex-grow: 3"></div>
+
+            <paper-icon-button class="close" icon="close"></paper-icon-button>
+
+          </div>
+          <div class="divider"></div>
+        </template>
+
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <div style="
+      display:  inline-flex;
+      " on-click="showoptions">
+        <paper-icon-button icon="social:person" class="person" slot="dropdown-trigger"></paper-icon-button>
+        <span class="name" style="display: block;font-size: 15px;margin-right: 2px;">{{name}}</span>
+        <paper-icon-button style="margin-right:25px;margin-top:3px;width:18px;padding:0px" icon="expand-more"></paper-icon-button>
+      </div>
+      <div id="dropdown-content1" style="display: none;">
+        <div class="content">
+          <div class="list">
+            <div class="item">
+              <paper-icon-button class="icon" icon="account-circle"></paper-icon-button>
+              <span class="title">Profile</span>
+            </div>
+            <div class="item">
+              <paper-icon-button class="icon" icon="settings"></paper-icon-button>
+              <span class="title">Settings</span>
+            </div>
+
+            <div class="divider"></div>
+            <div class="item" fxLayout="row" fxLayoutAlign="start center" matRipple [routerLink]="['/auth/login']">
+              <paper-icon-button class="icon" icon="exit-to-app"></paper-icon-button>
+              <span class="title">Logout</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <paper-icon-button on-click="openDialog" class="icon" icon="editor:format-align-right"></paper-icon-button>
+
+    <paper-dialog allow-click-through="true" id="model" with-backdrop>
+      <paper-tabs selected="0" autoselect autoselect-delay="0">
+        <paper-tab>Overview</paper-tab>
+        <paper-tab>Notifications</paper-tab>
+      </paper-tabs>
+      <div class="divider"></div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="buttons">
+      </div>
+
+    </paper-dialog>
+
+  </div>
