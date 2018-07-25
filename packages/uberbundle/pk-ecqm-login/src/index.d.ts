@@ -21,7 +21,7 @@ export declare class Login extends PolymerElement {
     private invalidemail;
     private invalidpassword;
     private isDirty;
-    private isInvalid;
+    isInvalid: boolean;
     private $;
     form_id: any;
     constructor();

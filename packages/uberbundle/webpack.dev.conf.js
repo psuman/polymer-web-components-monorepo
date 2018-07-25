@@ -32,6 +32,11 @@ module.exports = {
           // instead of /\/node_modules\//
           path.join(process.cwd(), 'node_modules'), '/node_modules'
         ]
+      },
+      {
+          test: /\.png$/, 
+          exclude: /node_modules/,
+          loader: 'file-loader'
       }
     ]
   },
