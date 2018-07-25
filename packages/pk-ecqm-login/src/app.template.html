@@ -1,0 +1,219 @@
+<style>
+  body {
+    line-height: normal;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    text-align: center;
+  }
+
+  paper-icon-button {
+    height: 44px;
+    width: 44px;
+    background: #455a64;
+    color: white;
+    box-shadow: 0 5px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+    border-radius: 50%;
+
+  }
+
+  .formelement {
+    width: 100%;
+
+  }
+
+  .formgroup {
+    padding: 0%;
+    width: 100%;
+    padding-bottom: 0.45em;
+  }
+
+  #form_id {
+    padding: 7% 10% 7%;
+    margin: 0%;
+    display: block;
+    margin-top: 0em;
+  }
+
+
+  @media (min-width: 768px) {
+    paper-item {
+      font-size: 16px;
+      font-weight: 400;
+      font: 400 16px Arial;
+    }
+    #createmeasureDialog {
+      top: 25%;
+      width: 30%;
+      margin-top: 0em;
+      margin: 0%;
+      box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);
+    }
+    .formgroup {
+      width: 100%;
+    }
+    .custom2 {
+      width: 100%;
+    }
+    ;
+  }
+
+  paper-button {
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font: 400 13.3333px Arial;
+
+    line-height: 36px;
+    border-radius: 2px;
+    padding: 0 16px;
+  }
+
+  .submit[enabled] {
+    color: white;
+    width: 100%;
+
+    background-color: #2196f3;
+  }
+
+  .submit[disabled] {
+    width: 100%;
+  }
+
+
+
+  @media (max-width: 425px) {
+    #createmeasureDialog {
+      padding: 15px;
+      width: 100%;
+      margin-top: 0em;
+    }
+    paper-button {
+      font-size: 12px;
+      font-weight: 600;
+      font-style: normal;
+      font: 400 10.3333px Arial;
+      line-height: 26px;
+      padding: 0 10px;
+      border-radius: 2px;
+    }
+
+    .submit[enabled] {
+      color: white;
+      width: 100%;
+      background-color: #2196f3;
+    }
+
+  }
+
+  @media (max-width: 360px) {
+    #createmeasureDialog {
+      padding: 10px;
+      width: 100%;
+      margin-top: 0em;
+    }
+    paper-button {
+      font-size: 10px;
+      font-weight: 600;
+      font-style: normal;
+      font: 400 9.3333px Arial;
+      line-height: 25px;
+      padding: 0 5px;
+      border-radius: 2px;
+    }
+    .submit[enabled] {
+      color: white;
+      background-color: #2196f3;
+    }
+
+
+  }
+
+  .login-header {
+    background: #303441;
+    padding: 8%;
+    margin: 0%;
+  }
+
+  .login-header img{
+    width : 30%;
+  }
+
+  /* a {
+    text-decoration: none;
+    color: #2196F3;
+    font-size: 16px
+
+  }
+
+  .extra-options {
+    line-height: 24px;
+    padding-top: 24px;
+    margin: 0%
+  }
+
+  .note {
+    color: #777;
+    margin-top: 0%;
+    margin-bottom: 10%;
+    text-align: center;
+    font-size: 16px;
+  } */
+
+  /* <!-- 
+  paper-checkbox.blue {
+    font-size: 16px;
+    --paper-checkbox-checked-color: var(--paper-blue-500);
+    --paper-checkbox-checked-ink-color: #777;
+    --paper-checkbox-unchecked-color: #777;
+    --paper-checkbox-unchecked-ink-color: #777;
+    --paper-checkbox-label-color: #777;
+    --paper-checkbox-label-checked-color: #777;
+  } --> */
+</style>
+<style is="custom-style">
+  paper-input {
+    --paper-input-container-focus-color: #455a64;
+  }
+</style>
+
+
+<paper-dialog opened="true" id="createmeasureDialog" modal>
+  <div _ngcontent-c2="" class="login-header" style="flex-direction: column; box-sizing: border-box; display: flex; max-width: 100%; place-content: center; align-items: center;">
+    <img alt="logo" class="logo" src="img/logo2x.png">
+  </div>
+
+  </div>
+  <form id="form_id" is="iron-form">
+    <div class="formgroup">
+      <paper-input id="emailField" label="E-Mail*" name="email" value="{{email}}" required auto-validate on-keyup="validateForm"
+        pattern="^(.)+@?[a-zA-Z_]+?\.[a-zA-Z]{2,3}"></paper-input>
+    </div>
+    <div class="formgroup">
+      <paper-input id="passField" type="password" name="password" label="Password*" value="{{password}}" required auto-validate
+        on-keyup="validateForm"></paper-input>
+    </div>
+
+
+    <!-- <div class="extra-options">
+      <paper-checkbox class="blue">
+        <span class="title">Remember Me</span>
+      </paper-checkbox>
+      <a class="forgot-password" style="float:right" [routerLink]="['/forgot-password']">Forgot Password?</a>
+    </div> -->
+
+    <div style="padding-top:10%;">
+      <paper-button class="submit" enabled$="{{!isInvalid}}" disabled$="{{isInvalid}}" on-click="submit" raised>submit</paper-button>
+
+    </div>
+
+
+  </form>
+  <!-- <p class="note">Don't have an account?
+    <br/>
+    <a [routerLink]="['/register']">Click here to create one</a>
+  </p> -->
+</paper-dialog>
+
+
+</div>
+
+</paper-dialog>

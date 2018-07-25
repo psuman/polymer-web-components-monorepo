@@ -1,0 +1,33 @@
+import { PolymerElement } from '@polymer/polymer/polymer-element';
+import '@polymer/iron-icons/iron-icons.js';
+import * as view from './app.template.html';
+import '@polymer/iron-icons/social-icons.js';
+import '@polymer/iron-icons/editor-icons.js';
+import '@polymer/paper-icon-button';
+import '@polymer/paper-item/paper-item.js';
+import '@polymer/paper-listbox';
+import '@polymer/paper-card';
+import '@polymer/paper-menu-button';
+import '@polymer/paper-dialog/paper-dialog.js';
+import '@polymer/paper-dropdown-menu/paper-dropdown-menu.js';
+import '@polymer/paper-input/paper-input.js';
+import '@polymer/paper-button';
+import '@polymer/paper-checkbox';
+export declare class Login extends PolymerElement {
+    private email;
+    private password;
+    private loginDetalis;
+    private dispatchEvent;
+    private invalidemail;
+    private invalidpassword;
+    private isDirty;
+    isInvalid: boolean;
+    private $;
+    form_id: any;
+    constructor();
+    static readonly template: typeof view;
+    submit(): void;
+    isFormValid(e: any): void;
+    reset(): void;
+    validateForm(): void;
+}
