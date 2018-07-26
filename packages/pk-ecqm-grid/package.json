@@ -1,6 +1,6 @@
 {
   "name": "ecqm-grid",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "main": "dist/pkecqmgrid.js",
   "flat": true,
   "license": "MIT",
@@ -22,7 +22,7 @@
     "@webcomponents/webcomponentsjs": "^2.0.1",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.1",
-    "ecqm-add-measure": "^1.1.0",
+    "ecqm-add-measure": "^1.6.0",
     "html-loader": "^0.5.5",
     "paper-checkbox": "^0.10.0",
     "ts-loader": "^4.4.1",
