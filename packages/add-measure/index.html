@@ -9,7 +9,7 @@
     <script src="webcomponentsjs/webcomponents-loader.js"></script>
     <script src="web-animations-next-lite.min.js"></script>
      <script type="text/javascript" src="vendors.js"></script>
-   
+     <link rel="stylesheet" type="text/css" href="">
 
 </head>
 
@@ -17,5 +17,11 @@
     <add-measure></add-measure>
      <script type="text/javascript" src="addmeasure.js"></script>
 </body>
-
+<script>
+        var cssname = ''; 
+        function loadjscssfile(cssname) {
+            var link = document.getElementsByTagName('link')[0];
+            link.href = '/home/srikanth/polymer-web-components-monorepo/packages/add-measure/' + cssname + 'style.css';
+        }
+    </script>
 </html>

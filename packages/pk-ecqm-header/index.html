@@ -5,14 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BreadCrumb Test</title>
+    <title>Header</title>
     <script src="webcomponentsjs/webcomponents-loader.js"></script>
-    <script>
-        function hello() {
-            console.log('Hello');
-            document.querySelector('pk-ecqm-breadcrumbs')
-        }
-    </script>
+    <link rel="stylesheet" type="text/css" href="">
+</head>
+
 </head>
 
 <body>
@@ -29,6 +26,13 @@
               console.log('Successfully Logged Out');
            })
         </script>
+            <script>
+                    var cssname = '';
+                    function loadjscssfile(cssname) {
+                        var link = document.getElementsByTagName('link')[0];
+                        link.href = '/home/srikanth/polymer-web-components-monorepo/packages/pk-ecqm-header/' + cssname + 'style.css';
+                    }
+                </script>
 </body>
 
 </html>

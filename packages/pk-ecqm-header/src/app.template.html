@@ -1,4 +1,8 @@
 <style>
+
+  :host{
+    --pk-header-theme-colour:#524e4e;
+     }
   html,
   body {
     margin: 0%;
@@ -24,7 +28,7 @@
   }
 
   .flex-container>.main {
-    color: #333;
+    color:var(--pk-header-theme-colour);
     width: 80px;
     margin: 0.3%;
     text-align: right;
@@ -36,6 +40,7 @@
     margin-right: 15px;
     background-repeat: no-repeat;
     display: inline-block;
+    color: var(--pk-header-theme-colour);
     fill: currentColor;
     height: 25px;
     padding: 0%;
@@ -153,7 +158,7 @@
     text-align: center;
     border-radius: 50%;
     background: #FFF;
-    color: #888;
+    color: var(--pk-header-theme-colour);
     border: 1px solid #EEE;
     display: inline-block;
   }
@@ -182,7 +187,7 @@
     min-height: 64px;
     padding: 0 16px 0 14px;
     position: relative;
-    color: #666;
+    color: var(--pk-header-theme-colour);
     cursor: pointer;
     font-weight: 500;
     font-size: 14px;

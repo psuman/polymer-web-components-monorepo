@@ -1,4 +1,10 @@
 <style>
+
+    :host {
+    --pk-bonnie-main-theme: #53777A;
+    --pk-bonnie-fill-indicator-colour:#e4e4e4;
+  }
+
   .minfo {
     color: #000;
     min-height: 60px;
@@ -87,7 +93,6 @@
 
   .progress-circle {
     margin-right: 32px;
-
     font-size: 13px;
     position: relative;
     /* so that children can be absolutely positioned */
@@ -191,7 +196,7 @@
   }
 
   a {
-    color: #4285f4;
+    color: var(--pk-bonnie-main-theme);
     cursor: pointer;
     text-decoration: underline;
     font-size: 15px;
@@ -206,6 +211,11 @@
     margin-bottom: 0.5%;
     place-content: center flex-start;
     align-items: center;
+  }
+  .progress-ring__circle
+  {
+
+fill: var(--pk-bonnie-fill-indicator-colour);
   }
 
   circle {

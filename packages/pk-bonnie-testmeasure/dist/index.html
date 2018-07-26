@@ -9,7 +9,7 @@
     <script src="webcomponentsjs/webcomponents-loader.js"></script>
     <script src="web-animations-next-lite.min.js"></script>
      <script type="text/javascript" src="vendors.js"></script>
-   
+     <link rel="stylesheet" type="text/css" href="">
 
 </head>
 
@@ -24,6 +24,13 @@
         "title": "CMS122v9", "testmeasure": "Diabetes: Hemoglobin A1c (HbA1c) Poor Control (> 9%)", "status": "PASS", "value": 60, "numerator": 13, "denominator": 5
     }]'></pk-bonnie-testmeasure>
      <script type="text/javascript" src="testmeasure.js"></script>
+     <script>
+            var cssname = '';  
+            function loadjscssfile(cssname) {
+                var link = document.getElementsByTagName('link')[0];
+                link.href = '/home/srikanth/polymer-web-components-monorepo/packages/pk-bonnie-testmeasure/' + cssname + 'style.css';
+            }
+     </script>
 </body>
 
 </html>

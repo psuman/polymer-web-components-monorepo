@@ -9,6 +9,7 @@
     <script src="webcomponentsjs/webcomponents-loader.js"></script>
     <script src="web-animations-next-lite.min.js"></script>
      <script type="text/javascript" src="vendors.js"></script>
+     <link rel="stylesheet" type="text/css" href="">
 </head>
 
 <body>
@@ -22,6 +23,14 @@
            //update the data
            console.log('add-measure-submit triggered');
         })
+      </script>
+    <script>
+            var cssname = '';
+            function loadjscssfile(cssname) {
+                var link = document.getElementsByTagName('link')[0];
+                link.href = '/home/srikanth/polymer-web-components-monorepo/packages/pk-ecqm-grid/' + cssname + 'style.css';
+                }
+        </script>
      </script>
 </body>
 

@@ -1,217 +1,222 @@
 <style>
-  body {
-    line-height: normal;
-    font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
-    text-align: center;
-  }
-
-  paper-icon-button {
-    height: 44px;
-    width: 44px;
-    background: #455a64;
-    color: white;
-    box-shadow: 0 5px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
-    border-radius: 50%;
-
-  }
-
-  .formelement {
-    width: 100%;
-  }
-
-  .formgroup {
-    width: 100%;
-  }
-
-
-
-  @media (min-width: 768px) {
-    paper-item {
-      font-size: 16px;
-      font-weight: 400;
-      font: 400 16px Arial;
-    }
-    #createmeasureDialog {
-      padding: 25px;
-      width: 45%;
-      margin-top: 0em;
-    }
-    .formgroup {
-      width: 100%;
-      margin-top: 20px;
-    }
-    .custom2 {
-      width: 100%;
-    }
-    .dropdown {
-      width: 360px;
-    }
-  }
-
-  #continue {
-    padding: 25px;
-    width: 55%;
-    margin-top: 0em;
-  }
-
-  h2 {
-    margin: 0 0 20px;
-  }
-
-  .content {
-    color: #3c763d;
-    font-size: 18px;
-  }
-
-  paper-button {
-    font-size: 14px;
-    font-weight: 500;
-    font-style: normal;
-    font: 400 13.3333px Arial;
-
-    line-height: 36px;
-    border-radius: 2px;
-    padding: 0 16px;
-  }
-
-  .submit[enabled] {
-    color: white;
-    background-color: #2196f3;
-  }
-
-  .continue {
-    color: white;
-    background-color: #2196f3;
-  }
-
-  .cancel {
-    background-color: #f44336;
-    color: white;
-    margin-left: 20px;
-
-  }
-
-
-  @media (max-width: 425px) {
-
-    paper-item {
-      font-size: 14px;
-      font-weight: 400;
-      font: 400 16px Arial;
-    }
-    #createmeasureDialog {
-      padding: 15px;
-      width: 100%;
-      margin-top: 0em;
-    }
-    .dropdown {
-      width: 300px;
-    }
-    #continue {
-      padding: 5px;
-      border-radius: 2px;
-      overflow: auto;
-      outline: 0;
-      width: 100%;
-    }
-    h2 {
-      margin: 0 0 10px;
-    }
-
-    paper-dropdown-menu {
-      position: absolute !important;
-      top: 8px !important;
-      right: 8px !important;
-    }
-    ;
-    .content {
-      color: #3c763d;
-      font-size: 12px;
-    }
-    paper-button {
-      font-size: 12px;
-      font-weight: 600;
-      font-style: normal;
-      font: 400 10.3333px Arial;
-      line-height: 26px;
-      padding: 0 10px;
-      border-radius: 2px;
-    }
-
-    .submit[enabled] {
-      color: white;
-      background-color: #2196f3;
-    }
-    .continue {
-      color: white;
-      background-color: #2196f3;
-    }
-
-    .cancel {
-      background-color: #f44336;
-      color: white;
-      margin-left: 8px;
-    }
-  }
-
-  @media (max-width: 360px) {
-
-    paper-item {
-      font-size: 13px;
-      font-weight: 400;
-      font: 400 12px Arial;
-    }
-    #createmeasureDialog {
-      padding: 10px;
-      width: 100%;
-      margin-top: 0em;
-    }
-
-    .dropdown {
-      width: 200px;
-    }
-    #continue {
-      padding: 3px;
-      border-radius: 2px;
-      overflow: auto;
-      outline: 0;
-      width: 100%;
-    }
-    h2 {
-      margin: 0 0 5px;
-    }
-    .content {
-      color: #3c763d;
-      font-size: 10px;
-    }
-    paper-button {
-      font-size: 10px;
-      font-weight: 600;
-      font-style: normal;
-      font: 400 9.3333px Arial;
-      line-height: 25px;
-      padding: 0 5px;
-      border-radius: 2px;
-    }
-    .submit[enabled] {
-      color: white;
-      background-color: #2196f3;
-    }
-    .continue {
-      color: white;
-      background-color: #2196f3;
-    }
-    .cancel {
-      background-color: #f44336;
-      color: white;
-      margin-left: 6px;
-    }
+    :host {
+     --pk_addmeasure_main_bg_color: white;
+     --pk_addmeasure_theme_colour:#455a64;
+   }
  
-  }
-
-  paper-menu-button {
-    float : right;
-  }
+   body {
+     line-height: normal;
+     font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
+     text-align: center;
+   }
+ 
+   paper-icon-button {
+     height: 44px;
+     width: 44px;
+     background:var(--pk_addmeasure_theme_colour);
+     color: white;
+     box-shadow: 0 5px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+     border-radius: 50%;
+ 
+   }
+ 
+   .formelement {
+     width: 100%;
+   }
+ 
+   .formgroup {
+     width: 100%;
+   }
+ 
+ 
+ 
+   @media (min-width: 768px) {
+     paper-item {
+       font-size: 16px;
+       font-weight: 400;
+       font: 400 16px Arial;
+     }
+     #createmeasureDialog {
+       padding: 25px;
+       width: 45%;
+       margin-top: 0em;
+       background: var(--pk_addmeasure_main_bg_color);
+     }
+     .formgroup {
+       width: 100%;
+       margin-top: 20px;
+     }
+     .custom2 {
+       width: 100%;
+     }
+     ;
+   }
+ 
+   #continue {
+     padding: 25px;
+     width: 55%;
+     margin-top: 0em;
+   }
+ 
+   h2 {
+     margin: 0 0 20px;
+   }
+ 
+   .content {
+     color: #3c763d;
+     font-size: 18px;
+   }
+ 
+   paper-button {
+     font-size: 14px;
+     font-weight: 500;
+     font-style: normal;
+     font: 400 13.3333px Arial;
+ 
+     line-height: 36px;
+     border-radius: 2px;
+     padding: 0 16px;
+   }
+ 
+   .submit[enabled] {
+     color: white;
+     background-color: #2196f3;
+   }
+ 
+   .continue {
+     color: white;
+     background-color: #2196f3;
+   }
+ 
+   .cancel {
+     background-color: #f44336;
+     color: white;
+     margin-left: 20px;
+ 
+   }
+ 
+ 
+   @media (max-width: 425px) {
+ 
+     paper-item {
+       font-size: 14px;
+       font-weight: 400;
+       font: 400 16px Arial;
+     }
+     #createmeasureDialog {
+       padding: 15px;
+       width: 100%;
+       margin-top: 0em;background: var(--pk_addmeasure_main_bg_color);
+     }
+     .dropdown {
+       width: 300px;
+     }
+     #continue {
+       padding: 5px;
+       border-radius: 2px;
+       overflow: auto;
+       outline: 0;
+       width: 100%;
+     }
+     h2 {
+       margin: 0 0 10px;
+     }
+ 
+     paper-dropdown-menu {
+       position: absolute !important;
+       top: 8px !important;
+       right: 8px !important;
+     }
+     ;
+     .content {
+       color: #3c763d;
+       font-size: 12px;
+     }
+     paper-button {
+       font-size: 12px;
+       font-weight: 600;
+       font-style: normal;
+       font: 400 10.3333px Arial;
+       line-height: 26px;
+       padding: 0 10px;
+       border-radius: 2px;
+     }
+ 
+     .submit[enabled] {
+       color: white;
+       background-color: #2196f3;
+     }
+     .continue {
+       color: white;
+       background-color: #2196f3;
+     }
+ 
+     .cancel {
+       background-color: #f44336;
+       color: white;
+       margin-left: 8px;
+     }
+   }
+ 
+   @media (max-width: 360px) {
+ 
+     paper-item {
+       font-size: 13px;
+       font-weight: 400;
+       font: 400 12px Arial;
+     }
+     #createmeasureDialog {
+       padding: 10px;
+       width: 100%;
+       margin-top: 0em;
+       background: var(--pk_addmeasure_main_bg_color);
+     }
+ 
+     .dropdown {
+       width: 200px;
+     }
+     #continue {
+       padding: 3px;
+       border-radius: 2px;
+       overflow: auto;
+       outline: 0;
+       width: 100%;
+     }
+     h2 {
+       margin: 0 0 5px;
+     }
+     .content {
+       color: #3c763d;
+       font-size: 10px;
+     }
+     paper-button {
+       font-size: 10px;
+       font-weight: 600;
+       font-style: normal;
+       font: 400 9.3333px Arial;
+       line-height: 25px;
+       padding: 0 5px;
+       border-radius: 2px;
+     }
+     .submit[enabled] {
+       color: white;
+       background-color: #2196f3;
+     }
+     .continue {
+       color: white;
+       background-color: #2196f3;
+     }
+     .cancel {
+       background-color: #f44336;
+       color: white;
+       margin-left: 6px;
+     }
+  
+   }
+ 
+   paper-menu-button {
+     float : right;
+   }
 </style>
    <style is="custom-style">
 

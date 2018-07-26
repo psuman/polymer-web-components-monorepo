@@ -43,12 +43,13 @@ export class TestMeasure extends PolymerElement {
         }
         else if(status.toLowerCase()=="pass")
         {
-            this.color="#23c438"
+            this.color="#f23737"
         }
         else
         {
-            this.color="#f23737"
-        }       
+          
+            this.color="#23c438"
+        }           
         return offset;
     
       }

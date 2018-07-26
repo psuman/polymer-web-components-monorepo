@@ -1,4 +1,8 @@
 <style>
+
+   :host{
+    --pk-login-theme: #303441;
+   }
   body {
     line-height: normal;
     font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -70,7 +74,7 @@
   .submit[enabled] {
     color: white;
     width: 100%;
-
+    
     background-color: #2196f3;
   }
 
@@ -85,7 +89,7 @@
       padding: 15px;
       width: 100%;
       margin-top: 0em;
-    }
+    } 
     paper-button {
       font-size: 12px;
       font-weight: 600;
@@ -101,7 +105,7 @@
       width: 100%;
       background-color: #2196f3;
     }
-
+ 
   }
 
   @media (max-width: 360px) {
@@ -126,15 +130,10 @@
 
 
   }
-
   .login-header {
-    background: #303441;
-    padding: 8%;
+    background:var(--pk-login-theme);
+    padding:5%;
     margin: 0%;
-  }
-
-  .login-header img{
-    width : 30%;
   }
 
   /* a {
@@ -157,8 +156,7 @@
     text-align: center;
     font-size: 16px;
   } */
-
-  /* <!-- 
+/* <!-- 
   paper-checkbox.blue {
     font-size: 16px;
     --paper-checkbox-checked-color: var(--paper-blue-500);
@@ -177,9 +175,10 @@
 
 
 <paper-dialog opened="true" id="createmeasureDialog" modal>
-  <div _ngcontent-c2="" class="login-header" style="flex-direction: column; box-sizing: border-box; display: flex; max-width: 100%; place-content: center; align-items: center;">
-    <img alt="logo" class="logo" src="img/logo2x.png">
-  </div>
+  <div _ngcontent-c2="" class="login-header" style="display: flex; max-width: 100%; place-content: center; align-items: center;">
+    <img alt="logo" class="logo" src="img/logo2x.png" style="
+    width: 30%;">"
+   </div>
 
   </div>
   <form id="form_id" is="iron-form">
