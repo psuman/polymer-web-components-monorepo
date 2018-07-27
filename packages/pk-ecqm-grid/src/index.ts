@@ -143,7 +143,8 @@ export class MeasuresGrid extends PolymerElement {
 			this.masterData = this.data;
 			this.pageData = this.data;
 			this.loadPagination(this.data);
-			this.isInitialized = true;
+            this.isInitialized = true;
+            this.searchValue = '';
 			this.rerenderData(this.data);
 		}
 	}
@@ -158,6 +159,29 @@ export class MeasuresGrid extends PolymerElement {
 
     __showAndIcon(show, type) {
         return show && type === 'icon';
+    }
+
+    __iconOnClick(e) {
+        let item = e.target.dataset.item ? JSON.parse(e.target.dataset.item) : {};
+        let row = e.target.dataset.row ? JSON.parse(e.target.dataset.row) : {};;
+        if(!item.onclick){
+            return;
+        }
+        if(item.fieldName === 'delete'){
+            this.deleteRow(row);
+        }
+    }
+
+    deleteRow(row){
+        this.data = this.masterData.filter(each => {
+            if(row.id === each.id){
+                return false;
+            }else {
+                return true;
+            }
+        });
+        this.isInitialized = false;
+        this.__init();
     }
 
     sort(e) {

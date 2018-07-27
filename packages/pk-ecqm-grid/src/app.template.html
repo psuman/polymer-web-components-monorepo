@@ -217,7 +217,7 @@
                 <template is="dom-repeat" items="{{columns}}">
                     <template is="dom-if" if="{{__showAndIcon(item.show, item.type)}}">
                         <td colspan$="{{item.colspan}}">
-                            <paper-icon-button icon$="{{__getRowData(row,item.fieldName)}}"></paper-icon-button>
+                            <paper-icon-button on-click="__iconOnClick" data-item$="[[item]]" data-row$="[[row]]" icon$="{{__getRowData(row,item.fieldName)}}"></paper-icon-button>
                         </td>
                     </template>
                     <template is="dom-if" if="{{__showAndString(item.show, item.type)}}">

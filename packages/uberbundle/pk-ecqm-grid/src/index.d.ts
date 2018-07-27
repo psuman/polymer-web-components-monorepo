@@ -54,6 +54,8 @@ export declare class MeasuresGrid extends PolymerElement {
     __getRowData(row: any, fieldName: any): any;
     __showAndString(show: any, type: any): boolean;
     __showAndIcon(show: any, type: any): boolean;
+    __iconOnClick(e: any): void;
+    deleteRow(row: any): void;
     sort(e: any): void;
     static readonly template: typeof view;
     search(): void;
