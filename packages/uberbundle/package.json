@@ -1,6 +1,6 @@
 {
   "name": "ecqm-uberbundle",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "main": "dist/uberbundle.js",
   "flat": true,
   "license": "MIT",
