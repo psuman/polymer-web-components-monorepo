@@ -2,4 +2,6 @@
 pk-ecqm-grid
 {
     --pk-grid-themecolour: #bd4507;
+    --pk-grid-cellValuecolor : #bd4507;
+    --pk-grid-headerValuecolor: #bd4507;
 }

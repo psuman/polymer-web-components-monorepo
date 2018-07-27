@@ -3,6 +3,8 @@
     :host
     {
         --pk-grid-themecolour: #455a64;
+        --pk-grid-cellValuecolor: rgba(0, 0, 0, 0.87);
+        --pk-grid-headerValuecolor: rgba(0, 0, 0, 0.54);
     }
     * {
         box-sizing: border-box;
@@ -12,8 +14,17 @@
         display: block;
     }
 
+    add-measure{
+        --pk_addmeasure_main_bg_color: white;
+        --pk_addmeasure_theme_colour:var(--pk-grid-themecolour);
+    }
+
     iron-icon {
         --iron-icon-fill-color: rgba(0, 0, 0, 0.54);
+    }
+
+    paper-input {
+        --paper-input-container-color : var(--pk-grid-themecolour);
     }
 
     paper-icon-button {
@@ -35,7 +46,7 @@
     }
 
     #titleheader>th {
-        color: rgba(0, 0, 0, 0.87);
+        color: var(--pk-grid-headerValuecolor);
         font-weight: 500;
         font-size: 20px;
         font-family: "Helvetica Neue", sans-serif;
@@ -88,7 +99,7 @@
     #myTable th {
         text-align: left;
         padding: 4px 0px 4px 25px;
-        color: rgba(0, 0, 0, 0.54);
+        color: var(--pk-grid-headerValuecolor);
         font-size: 12px;
         cursor: pointer;
     }
@@ -96,7 +107,7 @@
     #myTable td {
         text-align: left;
         padding: 4px 0px 4px 25px;
-        color: rgba(0, 0, 0, 0.87);
+        color: var(--pk-grid-cellValuecolor);
         font-size: 14px;
         cursor: pointer;
         font-family: Roboto, "Helvetica Neue", sans-serif;
