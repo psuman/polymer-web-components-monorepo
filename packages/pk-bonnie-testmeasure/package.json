@@ -1,6 +1,6 @@
 {
   "name": "pk-bonnie-testmeasure",
-  "version": "1.7.0",
+  "version": "1.9.0",
   "main": "dist/testmeasure.js",
   "flat": true,
   "license": "MIT",
